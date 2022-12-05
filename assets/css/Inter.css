@@ -321,7 +321,8 @@
 	display: block;
 	margin: auto;
 	width: -webkit-fill-available;
-}
+	height: 60vh;
+}	
 .btns{
 	padding: 0 !important;
 	cursor:pointer
@@ -413,4 +414,31 @@
 	  -webkit-transform: translateY(-6px) rotate(-1.2deg);
 			  transform: translateY(-6px) rotate(-1.2deg);
 	}
+  }
+
+  .black-shadow{
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  }
+  /* #favorite-content{
+	display:flex;
+	gap: 20px
+  }
+  .gallery-item{
+	flex: 1;
+  } */
+
+#favorite-content{
+	min-height: 50vh;
+}
+
+  .remove-from-favorite{
+
+  }
+
+  .remove-btn{
+	width:25px;
+	cursor:pointer;
+  }
+  .remove-btn:hover{
+	scale: 1.2
   }
