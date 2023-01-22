@@ -31,7 +31,8 @@ function getFavorites() {
   return JSON.parse(localStorage.getItem("saved_pictures"));
 }
 function getRandomDate() {
-  let start = new Date(2012, 0, 1);
+  let start = new Date(1995, 5, 16);
+  console.log(start);
   let end = new Date();
   let randomDate = new Date(
     start.getTime() + Math.random() * (end.getTime() - start.getTime())

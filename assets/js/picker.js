@@ -8,7 +8,6 @@
   //tlacitka a jejich eventy
   let reloadBtn = document.querySelector(".reload");
   let saveBtn = document.querySelector(".save");
-  let downloadBtn = document.querySelector(".download");
 
   reloadBtn.addEventListener("click", () => {
     generateNewImage(formatDate(getRandomDate()));
@@ -30,8 +29,6 @@
       document.querySelector(".save svg").setAttribute("fill", "#ff0066");
     }
   });
-
-  downloadBtn.addEventListener("click", () => {});
 
   mainImg.addEventListener("click", () => {
     window.open(mainImg.getAttribute("hdurl"), "_blank");
@@ -70,9 +67,18 @@
           }
         } else {
           console.log("got yt video, trying again");
-          generateNewImage(formatDate(getRandomDate()));
+          //generateNewImage(formatDate(getRandomDate()));
+          mainImgWrap.innerHTML = "API vrátilo YouTube video. To zobrazovat neumím :( zkus znova jiný datum."
         }
       }
     );
   }
+
+  function newOnCustomDate(){
+    var custom_date = document.querySelector("#custom-date").value;
+    generateNewImage(formatDate(custom_date));
+  }
+
+  document.querySelector("#custom-date").setAttribute("max", formatDate(todayDate));
+  document.querySelector("#custom-date").addEventListener("change", newOnCustomDate);
 })();
